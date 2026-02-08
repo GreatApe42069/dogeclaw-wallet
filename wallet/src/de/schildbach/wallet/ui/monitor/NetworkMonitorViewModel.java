@@ -1,28 +1,3 @@
-/*
- * Copyright the original author or authors.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
-package de.schildbach.wallet.ui.monitor;
-
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-
-/**
- * @author Andreas Schildbach
- */
-public class NetworkMonitorViewModel extends ViewModel {
-    public final MutableLiveData<Object> selectedItem = new MutableLiveData<>();
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5219deae147ca890fbd21e95815411c42a93983d801c664e6fd9019d8dbbb8e6
+size 1004

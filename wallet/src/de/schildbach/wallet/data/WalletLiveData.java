@@ -1,36 +1,3 @@
-/*
- * Copyright the original author or authors.
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- */
-
-package de.schildbach.wallet.data;
-
-import de.schildbach.wallet.WalletApplication;
-import org.bitcoinj.wallet.Wallet;
-
-/**
- * @author Andreas Schildbach
- * @author Paulo Vidal - x.com/inevitable360 (Dogecoin Foundation)
- */
-public class WalletLiveData extends AbstractWalletLiveData<Wallet> {
-    public WalletLiveData(final WalletApplication application) {
-        super(application, 0);
-    }
-
-    @Override
-    protected void onWalletActive(final Wallet wallet) {
-        postValue(wallet);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:ca0a3e47db400cd45d413f88d29afe15c7e0728a4d6ce42e093b7cd42e46549b
+size 1205

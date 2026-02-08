@@ -1,31 +1,3 @@
-package de.schildbach.wallet.data;
-
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
-import androidx.room.Update;
-
-import java.util.List;
-
-@Dao
-public interface CategoryDao {
-    @Insert
-    long insertCategory(Category category);
-
-    @Update
-    void updateCategory(Category category);
-
-    @Delete
-    void deleteCategory(Category category);
-
-    @Query("SELECT * FROM pos_categories ORDER BY name ASC")
-    List<Category> getAllCategories();
-
-    @Query("SELECT * FROM pos_categories WHERE id = :id LIMIT 1")
-    Category getCategoryById(long id);
-
-    @Query("SELECT * FROM pos_categories WHERE name = :name LIMIT 1")
-    Category getCategoryByName(String name);
-}
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:9bc9d8dddf40084e78e3c635c9ac18bf88a5ab16dfbf8c43bf5ab474ebaf86f1
+size 734
