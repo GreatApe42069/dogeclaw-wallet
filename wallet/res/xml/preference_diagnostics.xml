@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- These options have been moved to the main menu -->
+    <!-- Extended Public Key and Reset Blockchain are now separate menu items -->
+    
+</PreferenceScreen>

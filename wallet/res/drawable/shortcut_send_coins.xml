@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="25">
+
+    <item
+        android:bottom="@dimen/shortcut_padding"
+        android:left="@dimen/shortcut_padding"
+        android:right="@dimen/shortcut_padding"
+        android:top="@dimen/shortcut_padding">
+        <shape android:shape="oval">
+            <size
+                android:height="@dimen/shortcut_size"
+                android:width="@dimen/shortcut_size" />
+            <solid android:color="@color/bg_shortcut" />
+        </shape>
+    </item>
+    <item
+        android:gravity="center"
+        android:height="@dimen/shortcut_icon_size"
+        android:width="@dimen/shortcut_icon_size">
+        <vector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="@android:color/black"
+                android:pathData="M2.01,21L23,12 2.01,3 2,10l15,2 -15,2z"/>
+        </vector>
+    </item>
+</layer-list>

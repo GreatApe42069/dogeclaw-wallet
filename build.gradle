@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.12.2'
+        //noinspection GradleDependency
+        classpath 'net.sf.proguard:proguard-gradle:6.2.2'
+        classpath('fr.avianey.androidsvgdrawable:gradle-plugin:3.0.2') {
+            exclude group: 'xerces'
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+        maven { url 'https://jitpack.io' }
+    }
+}

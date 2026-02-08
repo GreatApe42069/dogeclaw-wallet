@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/preferences_category_general">
+
+        <ListPreference
+            android:key="btc_precision"
+            android:title="@string/preferences_precision_title"
+            android:summary="@string/preferences_precision_summary"
+            android:defaultValue="4"
+            android:entries="@array/preferences_precision_labels"
+            android:entryValues="@array/preferences_precision_values" />
+
+        <CheckBoxPreference
+            android:key="send_coins_autoclose"
+            android:title="@string/preferences_send_coins_autoclose_title"
+            android:summary="@string/preferences_send_coins_autoclose_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="remind_balance"
+            android:title="@string/preferences_remind_balance_title"
+            android:summary="@string/preferences_remind_balance_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="disclaimer"
+            android:title="@string/preferences_show_disclaimer_title"
+            android:summary="@string/preferences_show_disclaimer_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="radiodoge_enabled"
+            android:title="@string/preferences_radiodoge_title"
+            android:summary="@string/preferences_radiodoge_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="enable_logging"
+            android:title="@string/preferences_enable_logging_title"
+            android:summary="@string/preferences_enable_logging_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="default_fee_category"
+            android:title="@string/preferences_default_fee_category_title"
+            android:summary="@string/preferences_default_fee_category_summary"
+            android:defaultValue="ECONOMIC"
+            android:entries="@array/preferences_fee_category_labels"
+            android:entryValues="@array/preferences_fee_category_values" />
+
+        <Preference
+            android:key="data_usage"
+            android:title="@string/preferences_data_usage_title"
+            android:summary="@string/preferences_data_usage_summary">
+            <intent
+                android:targetClass="com.android.settings.Settings$DataUsageSummaryActivity"
+                android:targetPackage="com.android.settings" />
+        </Preference>
+
+        <Preference
+            android:key="notifications"
+            android:title="@string/preferences_notifications_title"
+            android:summary="@string/preferences_notifications_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preferences_category_privacy">
+
+        <CheckBoxPreference
+            android:key="biometric_enabled"
+            android:title="@string/biometric_enable"
+            android:summary="@string/biometric_auth_subtitle"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="sync_mode"
+            android:title="@string/preferences_sync_mode_title"
+            android:summary="@string/preferences_sync_mode_summary"
+            android:defaultValue="CONNECTION_FILTER" />
+
+        <EditTextPreference
+            android:key="trusted_peer"
+            android:title="@string/preferences_trusted_peer_title"
+            android:summary="@string/preferences_trusted_peer_summary"
+            android:inputType="textMultiLine|textNoSuggestions" />
+
+        <CheckBoxPreference
+            android:key="trusted_peer_only"
+            android:title="@string/preferences_trusted_peer_only_title"
+            android:summary="@string/preferences_trusted_peer_only_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="block_explorer"
+            android:title="@string/preferences_block_explorer_title"
+            android:summary="@string/preferences_block_explorer_summary"
+            android:entries="@array/preferences_block_explorer_labels"
+            android:entryValues="@array/preferences_block_explorer_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preferences_category_merchants">
+
+        <EditTextPreference
+            android:key="own_name"
+            android:title="@string/preferences_own_name_title"
+            android:summary="@string/preferences_own_name_summary"
+            android:dialogMessage="@string/preferences_own_name_dialog_message"
+            android:inputType="text"
+            android:maxLength="32" />
+
+        <EditTextPreference
+            android:key="bluetooth_address"
+            android:title="@string/preferences_bluetooth_address_title"
+            android:summary="@string/preferences_bluetooth_address_summary"
+            android:dialogMessage="@string/preferences_bluetooth_address_dialog_message"
+            android:inputType="text|textNoSuggestions" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preferences_category_menu_options">
+
+        <CheckBoxPreference
+            android:key="show_family_mode_menu"
+            android:title="@string/preferences_show_family_mode_menu_title"
+            android:summary="@string/preferences_show_family_mode_menu_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="point_of_sale_mode"
+            android:title="@string/preferences_point_of_sale_mode_title"
+            android:summary="@string/preferences_point_of_sale_mode_summary"
+            android:defaultValue="false" />
+
+        <Preference
+            android:key="payment_terminal_mode"
+            android:title="@string/preferences_payment_terminal_title"
+            android:summary="@string/preferences_payment_terminal_summary" />
+
+        <CheckBoxPreference
+            android:key="show_recurring_payments_menu"
+            android:title="@string/preferences_show_recurring_payments_menu_title"
+            android:summary="@string/preferences_show_recurring_payments_menu_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="show_digital_signature_menu"
+            android:title="@string/preferences_show_digital_signature_menu_title"
+            android:summary="@string/preferences_show_digital_signature_menu_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="show_write_check_menu"
+            android:title="@string/preferences_show_write_check_menu_title"
+            android:summary="@string/preferences_show_write_check_menu_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="show_multisig_menu"
+            android:title="@string/preferences_show_multisig_menu_title"
+            android:summary="@string/preferences_show_multisig_menu_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="show_authentication_menu"
+            android:title="@string/preferences_show_authentication_menu_title"
+            android:summary="@string/preferences_show_authentication_menu_summary"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="use_doge_enabled"
+            android:title="@string/preferences_use_doge_title"
+            android:summary="@string/preferences_use_doge_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/preferences_category_labs">
+        
+        <CheckBoxPreference
+            android:key="labs_exchange_enabled"
+            android:title="@string/preferences_labs_exchange_title"
+            android:summary="@string/preferences_labs_exchange_summary"
+            android:defaultValue="false" />
+        
+        <CheckBoxPreference
+            android:key="labs_atomic_swap_enabled"
+            android:title="@string/preferences_labs_atomic_swap_title"
+            android:summary="@string/preferences_labs_atomic_swap_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

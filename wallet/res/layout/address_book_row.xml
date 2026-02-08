@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/modal_background_modern"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <!-- Header Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/address_book_row_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Address"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/fg_significant" />
+
+            <TextView
+                android:id="@+id/address_book_row_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current address"
+                android:textSize="12sp"
+                android:textColor="@color/fg_significant"
+                android:alpha="0.7"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/address_book_row_exclude_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp" />
+
+    </LinearLayout>
+
+    <!-- Address Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/address_book_row_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="D7Y55...X9K2"
+            android:textSize="14sp"
+            android:textColor="@color/fg_significant"
+            android:fontFamily="monospace"
+            android:singleLine="true"
+            android:ellipsize="middle" />
+
+        <TextView
+            android:id="@+id/address_book_row_excluded_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address_excluded_from_spending"
+            android:textSize="12sp"
+            android:textColor="@color/fg_significant"
+            android:alpha="0.7"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Status Row (if excluded) -->
+    <LinearLayout
+        android:id="@+id/layout_excluded_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/text_excluded_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="This address is excluded from spending"
+            android:textSize="12sp"
+            android:textColor="@color/fg_significant"
+            android:alpha="0.7"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+    <Toolbar
+        android:id="@+id/address_book_row_context_bar"
+        android:theme="@style/My.ThemeOverlay.ContextBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

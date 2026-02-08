@@ -1,0 +1,658 @@
+<!--
+    Dogecoin Wallet Website
+    @author Paulo Vidal - x.com/inevitable360 (Dogecoin Foundation)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogecoin Wallet - Much Secure, Very Wow!</title>
+    <meta name="description" content="The most advanced, secure, and feature-rich Dogecoin wallet. True protocol implementation with 3-6 second payment detection, Write a Check feature for time-locked payments (like traditional bank checks), RadioDoge offline transactions, Point of Sale (POS) system, Payment Terminal Mode, accounting reports, DogeConnect protocol, Use Doge store discovery map, and incredibly low 0.01 DOGE per KB fees. Much features, very wow!">
+    <meta name="keywords" content="dogecoin, wallet, android, ios, cryptocurrency, bitcoin, crypto, mobile, secure, offline, radiodoge, blockchain, digital currency">
+    <meta name="author" content="Dogecoin Wallet Team">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffc107">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dogecoin Wallet">
+    <meta property="og:title" content="Dogecoin Wallet - Much Secure, Very Wow!">
+    <meta property="og:description" content="The most advanced, secure, and feature-rich Dogecoin wallet. True protocol implementation with 3-6 second payment detection, Write a Check feature for time-locked payments (like traditional bank checks), RadioDoge offline transactions, Point of Sale (POS) system, Payment Terminal Mode, accounting reports, DogeConnect protocol support, Use Doge store discovery map, Atomic Swap for cross-chain exchanges, and Exchange for buying/selling Dogecoin.">
+    <meta property="og:url" content="https://dogecoinwallet.org">
+    <meta property="og:image" content="https://dogecoinwallet.org/images/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dogecoin Wallet - Much Secure, Very Wow!">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Article Meta Tags -->
+    <meta property="article:section" content="Technology">
+    <meta property="article:tag" content="Dogecoin">
+    <meta property="article:tag" content="Cryptocurrency">
+    <meta property="article:tag" content="Mobile Wallet">
+    <meta property="article:tag" content="Android">
+    <meta property="article:tag" content="IOS">
+    <meta property="article:tag" content="Blockchain">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dogecoin">
+    <meta name="twitter:creator" content="@inevitable360">
+    <meta name="twitter:title" content="Dogecoin Wallet - Much Secure, Very Wow!">
+    <meta name="twitter:description" content="The most advanced Dogecoin wallet with RadioDoge offline transactions, Point of Sale (POS) system, Payment Terminal Mode, accounting reports, DogeConnect protocol support, and lightning-fast payment detection.">
+    <meta name="twitter:image" content="https://dogecoinwallet.org/images/social-card.png">
+    <meta name="twitter:image:alt" content="Dogecoin Wallet App Screenshot">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="application-name" content="Dogecoin Wallet">
+    <meta name="apple-mobile-web-app-title" content="Dogecoin Wallet">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://dogecoinwallet.org">
+    
+    <!-- Language -->
+    <meta name="language" content="English">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    
+    <!-- App Store Meta Tags -->
+    <meta name="apple-itunes-app" content="app-id=123456789">
+    <meta name="google-play-app" content="app-id=org.dogecoin.wallet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="images/dogecoin.svg">
+    <link rel="apple-touch-icon" href="images/dogecoin.svg">
+    
+    <!-- Simple Language Selector -->
+    <script type="text/javascript">
+        // Simple language detection and fallback
+        function detectBrowserLanguage() {
+            const lang = navigator.language || navigator.userLanguage;
+            return lang.split('-')[0]; // Get language code (e.g., 'en' from 'en-US')
+        }
+        
+        function showBrowserTranslationInstructions() {
+            const userLang = detectBrowserLanguage();
+            const instructions = {
+                'en': 'Right-click → "Translate to English"',
+                'es': 'Right-click → "Traducir al español"',
+                'fr': 'Right-click → "Traduire en français"',
+                'de': 'Right-click → "Auf Deutsch übersetzen"',
+                'pt': 'Right-click → "Traduzir para português"',
+                'zh': 'Right-click → "翻译成中文"',
+                'ja': 'Right-click → "日本語に翻訳"',
+                'ko': 'Right-click → "한국어로 번역"',
+                'ru': 'Right-click → "Перевести на русский"',
+                'ar': 'Right-click → "ترجمة إلى العربية"'
+            };
+            
+            return instructions[userLang] || instructions['en'];
+        }
+    </script>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Dogecoin Wallet",
+        "description": "The most advanced, secure, and feature-rich Dogecoin wallet with Write a Check feature for time-locked payments (like traditional bank checks), RadioDoge offline transactions, Point of Sale (POS) system, Payment Terminal Mode, accounting reports, DogeConnect protocol support, and lightning-fast payment detection.",
+        "url": "https://dogecoinwallet.org",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Dogecoin Wallet Team",
+            "url": "https://github.com/qlpqlp/dogecoin-wallet"
+        },
+        "screenshot": "https://dogecoinwallet.org/images/app-screenshot.png",
+        "softwareVersion": "1.0 (Version Code 91)",
+        "datePublished": "2025-01-01",
+        "dateModified": "2025-10-17",
+        "keywords": "dogecoin, wallet, android, IOS, cryptocurrency, blockchain, mobile, secure, offline, radiodoge"
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="images/dogecoin.svg" alt="Dogecoin Wallet" class="logo-img">
+                <span class="logo-text">Dogecoin Wallet</span>
+            </a>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#documentation" class="nav-link">Docs</a>
+                <a href="#contribute" class="nav-link">Contribute</a>
+                
+                <!-- Language Selector -->
+                <div class="language-selector">
+                    <button class="language-selector-btn" id="language-selector-btn" onclick="showTranslationInstructions()">
+                        <i class="fas fa-globe-americas"></i>
+                        <span>Translate</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                
+                <h1 class="hero-title">
+                    
+                    <span>The Dogecoin Wallet</span>
+                </h1>
+                <p class="hero-description">
+                    The most advanced, secure, and feature-rich Dogecoin wallet. 
+                    True protocol implementation with 3-6 second payment detection and incredibly low 0.01 DOGE per KB fees. 
+                    Includes family mode for kids and family members, automatic recurring payments, digital signature support for messages and files, Write a Check feature for time-locked payments using P2SH CLTV addresses (perfect for rent, gifts, and scheduled payments, just like traditional bank checks), RadioDoge to send signed Dogecoin transactions without internet, Point of Sale (POS) system for merchants with web-based storefront and inventory management, Payment Terminal Mode for secure PIN-protected POS systems with kiosk mode, comprehensive accounting reports with CSV/JSON/PDF export, DogeConnect protocol support for secure encrypted payment envelopes, Atomic Swap for trustless cross-chain exchanges (DOGE ↔ BTC/LTC), and Exchange integration for buying and selling Dogecoin directly from your wallet. 
+                    Built with love for the Dogecoin community. Such features, very wow!
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-secondary"  id="downloadApkBtn">
+                        <img src="images/google-play.png" alt="Get it on Google Play" class="store-badge" style="height: 30px;">
+                    </a>
+                    <a href="#" class="btn btn-secondary store-btn" data-message="Much Soon!" title="Much Soon!">
+                        <img src="images/apple-store.png" alt="Get it on Apple Store" class="store-badge" style="height: 30px;">
+                    </a>                    
+                    <a href="https://github.com/qlpqlp/dogecoin-wallet" class="btn btn-secondary github-btn" target="_blank">
+                        <i class="fab fa-github"></i>
+                        View Source Code
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-bolt stat-icon"></i>
+                        <span class="stat-number">3s</span>
+                        <span class="stat-label">Seconds Payment Detection</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-coins stat-icon"></i>
+                        <span class="stat-number">Ð 0.01</span>
+                        <span class="stat-label">TX Fees</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fab fa-github stat-icon"></i>
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Open Source</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Back phone with RadioDoge -->
+                <div class="back-phone-container" data-tooltip="RadioDoge enables Dogecoin payments without internet! Click to learn more.">
+                    <img src="images/back-phone-radiodoge.png" alt="RadioDoge Back Phone" class="back-phone">
+                </div>
+                
+                <!-- Main phone with video -->
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <video 
+                            class="phone-video" 
+                            autoplay 
+                            muted 
+                            loop 
+                            playsinline
+                            poster="images/wallet-hero.png"
+                            aria-label="Dogecoin Wallet App Demo">
+                            <source src="images/DogecoinWalletScreen.mp4" type="video/mp4">
+                            <!-- Fallback for browsers that don't support video -->
+                            <img src="images/wallet-hero.png" alt="Dogecoin Wallet App" class="hero-phone">
+                        </video>
+                        
+                        <!-- RadioDoge tooltip inside phone screen -->
+                        <div class="radiodoge-tooltip">
+                            <div class="tooltip-content">
+                                <h3><i class="fas fa-broadcast-tower"></i> RadioDoge Integration</h3>
+                                <p>Send Dogecoin payments without internet using LoRa technology! Perfect for remote areas or emergency situations.</p>
+                                <div class="tooltip-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>No Internet Required</span>
+                                </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-satellite"></i>
+                                        <span>LoRa Technology</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>Secure & Private</span>
+                                    </div>
+                                </div>
+                                <a href="user-guide.html#radiodoge" class="tooltip-btn">
+                                    <i class="fas fa-book"></i>
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Highlights Section -->
+    <section class="technical-highlights">
+        <div class="container">
+            <div class="highlight-content">
+                <div class="highlight-text">
+                    <h2>True Dogecoin Protocol Implementation ⚡</h2>
+                    <p class="highlight-description">
+                        Unlike other wallets that rely on third-party services, our wallet implements the essential Dogecoin protocol components directly. 
+                        This means faster transactions, lower fees, and complete independence from external dependencies while maintaining full self-custodial control.
+                    </p>
+                    <div class="highlight-features">
+                        <div class="highlight-feature">
+                            <i class="fas fa-bolt highlight-icon"></i>
+                            <div>
+                                <h4>Lightning Fast Detection</h4>
+                                <p>3-6 second payment detection using Mempool</p>
+                            </div>
+                        </div>
+                        <div class="highlight-feature">
+                            <i class="fas fa-coins highlight-icon"></i>
+                            <div>
+                                <h4>Incredibly Low Fees</h4>
+                                <p>Just 0.01 DOGE per KB! Most transactions cost only 0.01 DOGE total - that's less than a penny!</p>
+                            </div>
+                        </div>
+                        <div class="highlight-feature">
+                            <i class="fas fa-link highlight-icon"></i>
+                            <div>
+                                <h4>Self-Custodial Control</h4>
+                                <p>Your keys, your coins! Direct blockchain connection with complete independence from external services</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight-visual">
+                    <div class="protocol-diagram">
+                        <div class="node"><i class="fas fa-mobile-alt"></i> Wallet</div>
+                        <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="node"><i class="fas fa-globe"></i> Mempool</div>
+                        <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                        <div class="node"><i class="fas fa-link"></i> Dogecoin Blockchain</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Such Features, Very Wow! <i class="fas fa-rocket"></i></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt feature-icon"></i>
+                    <h3>Essential Protocol Implementation</h3>
+                    <p>No third-party dependencies! Direct Dogecoin blockchain connection using Mempool for lightning-fast payment detection in just 3-6 seconds with incredibly low 0.01 DOGE per KB fees.</p>
+                    <a href="user-guide.html#getting-started" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Much Security</h3>
+                    <p>Self-custodial wallet with PIN protection, biometric authentication, and HD key derivation. Your keys, your coins!</p>
+                    <a href="user-guide.html#security-tips" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Family Mode</h3>
+                    <p>Create child wallets for family members with individual addresses, QR code sharing, and parental controls.</p>
+                    <a href="user-guide.html#family-mode" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-signature feature-icon"></i>
+                    <h3>Digital Signing</h3>
+                    <p>Sign any document, text, or photo with your Dogecoin private key for authentication and verification.</p>
+                    <a href="user-guide.html#digital-signing" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock feature-icon"></i>
+                    <h3>Authentication</h3>
+                    <p>Prove access with message signing. Open doors, validate tickets, or access digital content by signing challenge messages with your Dogecoin address. Perfect for physical and digital access control.</p>
+                    <a href="user-guide.html#authentication" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>Multi-Signature Wallets</h3>
+                    <p>Create M-of-N multi-signature wallets requiring multiple signatures to authorize transactions. Perfect for shared accounts, business wallets, and enhanced security with collaborative spending.</p>
+                    <a href="user-guide.html#multi-signature" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-exchange-alt feature-icon"></i>
+                    <h3>Exchange (Labs)</h3>
+                    <p>Buy and sell Dogecoin directly from your wallet using Metal Pay Connect integration. Seamlessly convert between Dogecoin and fiat currencies with secure API integration. Supports multiple fiat currencies and automatically integrates with your wallet address and balance.</p>
+                    <a href="user-guide.html#exchange" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt feature-icon"></i>
+                    <h3>Atomic Swap (Labs)</h3>
+                    <p>Exchange Dogecoin for Bitcoin or Litecoin using trustless cross-chain atomic swaps. No centralized exchanges needed - swap directly peer-to-peer using Hash Time Lock Contracts (HTLC) for secure, decentralized trading.</p>
+                    <a href="user-guide.html#atomic-swap" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-credit-card feature-icon"></i>
+                    <h3>Recurring Payments</h3>
+                    <p>Schedule one-time or monthly recurring payments with precise date/time control and OP_RETURN support.</p>
+                    <a href="user-guide.html#recurring-payments" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cash-register feature-icon"></i>
+                    <h3>Payment Terminal Mode</h3>
+                    <p>Secure PIN-protected payment terminal for POS systems with full-screen kiosk mode. Perfect for merchants and businesses with QR code display and payment monitoring. Exit requires PIN authentication.</p>
+                    <a href="user-guide.html#payment-terminal" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-store feature-icon"></i>
+                    <h3>Point of Sale (POS)</h3>
+                    <p>Complete e-commerce solution for merchants. Manage products, categories, and inventory. Access your storefront from any browser on your local network. Real-time payment detection with QR code payments.</p>
+                    <a href="user-guide.html#point-of-sale" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-edit feature-icon"></i>
+                    <h3>Write a Check</h3>
+                    <p>Create time-locked Dogecoin payments just like traditional bank checks! Uses P2SH CLTV addresses that lock funds until a specified date at the blockchain level. Includes expiration dates, automatic cancellation, status tracking, and PDF generation. Perfect for rent payments, gifts, scheduled payments, and more.</p>
+                    <a href="user-guide.html#write-a-check" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt feature-icon"></i>
+                    <h3>Use Doge</h3>
+                    <p>Discover stores and businesses that accept Dogecoin near you! Interactive GPS-enabled map with store listings, filtering, and community-contributed sources. Add your store or contribute to the community database.</p>
+                    <a href="user-guide.html#use-doge" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-broadcast-tower feature-icon"></i>
+                    <h3>RadioDoge</h3>
+                    <p>Send signed Dogecoin transactions without internet using LoRa devices! Connect with KeyChain LoRa or any LoRa-enabled device for offline transactions. Powered by <a href="https://github.com/dogecoinfoundation/radiodoge" target="_blank" style="color: #ffc107; text-decoration: underline;">RadioDoge</a> V3 from <a href="https://dogecoin.org" target="_blank" style="color: #ffc107; text-decoration: underline;">Dogecoin Foundation</a>.</p>
+                    <a href="user-guide.html#radiodoge" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>                
+                <div class="feature-card">
+                    <i class="fas fa-sync-alt feature-icon"></i>
+                    <h3>Blockchain Sync Checkpoints</h3>
+                    <p>Reset blockchain synchronization with custom checkpoints for faster initial sync. Select from predefined checkpoints to start sync from a specific block height instead of the beginning.</p>
+                    <a href="user-guide.html#blockchain-checkpoints" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sliders-h feature-icon"></i>
+                    <h3>Custom Transaction Fees</h3>
+                    <p>Configure your default transaction fee category (Economic, Normal, Priority) in Settings. The selected fee category is automatically applied to all transactions including sending coins, sweeping wallets, and canceling checks.</p>
+                    <a href="user-guide.html#custom-fees" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>                                     
+                <div class="feature-card">
+                    <i class="fas fa-plug feature-icon"></i>
+                    <h3>DogeConnect</h3>
+                    <p>Secure payment protocol for processing encrypted payment envelopes. Compatible with <a href="https://github.com/dogeorg/connect" target="_blank" style="color: #ffc107; text-decoration: underline;">DogeConnect</a> specification, allowing your wallet to parse and process secure payment requests from merchants and services. From <a href="https://dogecoin.org" target="_blank" style="color: #ffc107; text-decoration: underline;">Dogecoin Foundation</a>.</p>
+                    <a href="user-guide.html#dogeconnect" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Accounting Reports</h3>
+                    <p>Generate comprehensive transaction reports with CSV, JSON, and PDF export. Visual timeline charts, date range filtering, and complete transaction data with 8 decimal precision for professional financial reporting.</p>
+                    <a href="user-guide.html#accounting-reports" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe feature-icon"></i>
+                    <h3>Network Monitor</h3>
+                    <p>Real-time worldwide node discovery, connection monitoring, and network health tracking.</p>
+                    <a href="user-guide.html#network-monitor" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language feature-icon"></i>
+                    <h3>Multi-Language</h3>
+                    <p>Support for 30+ languages with comprehensive translations for global accessibility.</p>
+                    <a href="user-guide.html#getting-started" class="feature-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>       
+            </div>
+        </div>
+    </section>
+    <!-- Documentation Section -->
+    <section id="documentation" class="documentation">
+        <div class="container">
+            <h2 class="section-title">Much Documentation, Very Helpful! <i class="fas fa-book"></i></h2>
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <i class="fas fa-book doc-icon"></i>
+                    <h3>User Guide</h3>
+                    <p>Complete guide on how to use all features of the Dogecoin Wallet</p>
+                    <a href="user-guide.html" class="doc-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-tools doc-icon"></i>
+                    <h3>Developer Docs</h3>
+                    <p>Technical documentation for developers and contributors</p>
+                    <a href="developer-guide.html" class="doc-link">View Docs <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-shield-alt doc-icon"></i>
+                    <h3>Privacy Policy</h3>
+                    <p>How we handle your data and protect your privacy</p>
+                    <a href="privacy-policy.html" class="doc-link">Read Policy <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-clipboard-list doc-icon"></i>
+                    <h3>Terms of Service</h3>
+                    <p>Terms and conditions for using the Dogecoin Wallet</p>
+                    <a href="terms-of-service.html" class="doc-link">Read Terms <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-balance-scale doc-icon"></i>
+                    <h3>License</h3>
+                    <p>GPL v3.0 License - Open source and free to use</p>
+                    <a href="license.html" class="doc-link">View License <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-bug doc-icon"></i>
+                    <h3>Report Issues</h3>
+                    <p>Found a bug? Report it on GitHub and help us improve</p>
+                    <a href="https://github.com/qlpqlp/dogecoin-wallet/issues" class="doc-link" target="_blank">Report Bug <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribute Section -->
+    <section id="contribute" class="contribute">
+        <div class="container">
+            <h2 class="section-title">Much Contribute, Very Community! <i class="fas fa-hands-helping"></i></h2>
+            <div class="contribute-content">
+                <div class="contribute-info">
+                    <h3>Help Make Dogecoin Wallet Better!</h3>
+                    <p>This project is 100% open source and community-driven. We welcome contributions from developers, translators, designers, and users!</p>
+                    <div class="contribute-ways">
+                        <div class="contribute-way">
+                            <i class="fas fa-code way-icon"></i>
+                            <div>
+                                <h4>Code Contributions</h4>
+                                <p>Submit pull requests, fix bugs, add features</p>
+                            </div>
+                        </div>
+                        <div class="contribute-way">
+                            <i class="fas fa-globe way-icon"></i>
+                            <div>
+                                <h4>Translations</h4>
+                                <p>Help translate the app to your language</p>
+                            </div>
+                        </div>
+                        <div class="contribute-way">
+                            <i class="fas fa-palette way-icon"></i>
+                            <div>
+                                <h4>Design & UI</h4>
+                                <p>Improve the user interface and experience</p>
+                            </div>
+                        </div>
+                        <div class="contribute-way">
+                            <i class="fas fa-bug way-icon"></i>
+                            <div>
+                                <h4>Testing & Bug Reports</h4>
+                                <p>Test the app and report issues you find</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contribute-buttons">
+                        <a href="https://github.com/qlpqlp/dogecoin-wallet" class="btn btn-secondary github-btn" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View on GitHub
+                        </a>
+                        <a href="https://github.com/qlpqlp/dogecoin-wallet/issues" class="btn btn-secondary" target="_blank">
+                            <i class="fa-solid fa-bug"></i>
+                            Report Issue
+                        </a>
+                    </div>
+                </div>
+                <div class="contribute-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Open Source</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">GPL v3.0</span>
+                        <span class="stat-label">License</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Contributors</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dogecoin Wallet</h4>
+                    <p>Much secure, very wow! The most advanced Dogecoin wallet.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/qlpqlp/dogecoin-wallet" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://x.com/dogecoin" target="_blank" class="x-icon">
+                            <span>𝕏</span>
+                            
+                        </a>
+                        <a href="https://dogecoin.org" target="_blank" class="x-icon">
+                            <span>Ð</span>
+                        </a>                        
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="license.html">License</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="https://github.com/qlpqlp/dogecoin-wallet/issues">Report Issues</a></li>
+                        <li><a href="user-guide.html">User Guide</a></li>
+                        <li><a href="developer-guide.html">Developer Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dogecoin Wallet. Made with <i class="fas fa-heart"></i> for the Dogecoin community. Such open source, very wow!</p>
+                <p class="disclaimer"><i class="fas fa-exclamation-triangle"></i> Use at your own risk! This software is provided as-is without any warranty.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- APK Download Modal -->
+    <div id="apkModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fab fa-android"></i> Download APK (v1.0 - Build 92)</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>The Dogecoin Wallet can already be installed and tested on any Android device version 14 or more and is pending review on Google Play Store.</p>
+                <div class="modal-buttons">
+                    <a href="https://github.com/qlpqlp/dogecoin-wallet/releases/download/V1.0-Android-16/DogecoinWallet-v1.0-v92-Release.apk" class="btn btn-primary" download id="modalDownloadBtn">
+                        <i class="fas fa-download"></i>
+                        Download APK
+                    </a>
+                    <button class="btn btn-secondary" id="cancelDownload">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Doge Meme Words Animation Container -->
+    <div id="dogeWordsContainer" class="doge-words-container"></div>
+
+    <!-- Floating Rocket to Top Button -->
+    <button id="rocketToTop" class="rocket-to-top" title="Back to Top">
+        <div class="rocket">
+            <div class="rocket-body">
+                <div class="body"></div>
+                <div class="fin fin-left"></div>
+                <div class="fin fin-right"></div>
+                <div class="window"></div>
+            </div>
+            <div class="exhaust-flame"></div>
+            <ul class="exhaust-fumes">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class="star">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

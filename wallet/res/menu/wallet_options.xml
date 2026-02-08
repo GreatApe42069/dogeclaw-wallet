@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/wallet_options_request"
+        android:icon="@drawable/ic_send_flipped_white_24dp"
+        android:showAsAction="always|withText"
+        android:title="@string/request_coins_activity_title"
+        android:titleCondensed="@string/button_request_coins"
+        android:visible="@bool/wallet_actions_top" />
+    <item
+        android:id="@+id/wallet_options_request_legacy"
+        android:showAsAction="never"
+        android:title="@string/wallet_options_request_legacy"
+        android:orderInCategory="998"
+        android:visible="false" />
+    <item
+        android:id="@+id/wallet_options_send"
+        android:icon="@drawable/ic_send_white_24dp"
+        android:showAsAction="always|withText"
+        android:title="@string/send_coins_activity_title"
+        android:titleCondensed="@string/button_send_coins"
+        android:visible="@bool/wallet_actions_top" />
+    <item
+        android:id="@+id/wallet_options_scan"
+        android:icon="@drawable/ic_photo_camera_white_24dp"
+        android:showAsAction="always|withText"
+        android:title="@string/button_scan"
+        android:visible="@bool/wallet_actions_top" />
+    <item
+        android:id="@+id/wallet_options_address_book"
+        android:icon="@drawable/ic_local_offer_white_24dp"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/address_book_activity_title" />
+    <item
+        android:showAsAction="never"
+        android:icon="@drawable/ic_family_24dp"
+        android:title="@string/family_mode_menu_title">
+        <menu>
+            <item
+                android:id="@+id/wallet_options_family_mode"
+                android:icon="@drawable/ic_family_24dp"
+                android:showAsAction="never"
+                android:title="@string/family_mode_manage" />
+            <item
+                android:id="@+id/wallet_options_activate_child"
+                android:icon="@drawable/ic_add_24dp"
+                android:showAsAction="never"
+                android:title="@string/family_mode_activate_child" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/wallet_options_point_of_sale"
+        android:icon="@drawable/ic_point_of_sale_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/point_of_sale_mode_title" />
+    <item
+        android:id="@+id/wallet_options_recurring_payments"
+        android:icon="@drawable/ic_repeat_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/recurring_payments_menu_title" />
+    <item
+        android:id="@+id/wallet_options_digital_signature"
+        android:icon="@drawable/ic_pen_signing_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/digital_signature_activity_title" />
+    <item
+        android:id="@+id/wallet_options_write_check"
+        android:icon="@drawable/ic_checkbook_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/write_check_menu_title" />
+    <item
+        android:id="@+id/wallet_options_multisig"
+        android:icon="@drawable/ic_diversity_3_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/multisig_menu_title" />
+    <item
+        android:id="@+id/wallet_options_authentication"
+        android:icon="@drawable/ic_lock_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/authentication_menu_title" />
+    <item
+        android:id="@+id/wallet_options_atomic_swap"
+        android:icon="@drawable/ic_sync_white_24dp"
+        android:showAsAction="never"
+        android:title="Atomic Swap" />
+    <item
+        android:id="@+id/wallet_options_use_doge"
+        android:icon="@drawable/ic_place_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/use_doge_activity_title" />
+    <item
+        android:id="@+id/wallet_options_accounting_reports"
+        android:icon="@drawable/ic_bar_chart_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/accounting_reports_menu_title" />
+    <item
+        android:id="@+id/wallet_options_preferences"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:showAsAction="never"
+        android:title="@string/preferences_activity_title" />
+    <item
+        android:id="@+id/wallet_options_education"
+        android:icon="@drawable/ic_school_white_24dp"
+        android:orderInCategory="998"
+        android:showAsAction="never"
+        android:title="@string/education_title" />
+    <item
+        android:id="@+id/wallet_options_help"
+        android:icon="@drawable/ic_help_white_24dp"
+        android:orderInCategory="999"
+        android:showAsAction="never"
+        android:title="@string/button_help" />
+</menu>

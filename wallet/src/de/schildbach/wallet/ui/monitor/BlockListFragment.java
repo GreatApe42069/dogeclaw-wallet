@@ -1,0 +1,125 @@
+/*
+ * Copyright the original author or authors.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+package de.schildbach.wallet.ui.monitor;
+
+import android.content.Context;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ViewAnimator;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
+import de.schildbach.wallet.Configuration;
+import de.schildbach.wallet.Constants;
+import de.schildbach.wallet.R;
+import de.schildbach.wallet.WalletApplication;
+import de.schildbach.wallet.addressbook.AddressBookEntry;
+import de.schildbach.wallet.ui.AbstractWalletActivity;
+import de.schildbach.wallet.ui.AbstractWalletActivityViewModel;
+import de.schildbach.wallet.ui.StickToTopLinearLayoutManager;
+import org.bitcoinj.core.Sha256Hash;
+import org.bitcoinj.core.StoredBlock;
+import org.bitcoinj.wallet.Wallet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import android.util.Log;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author Andreas Schildbach
+ */
+public final class BlockListFragment extends Fragment {
+    private AbstractWalletActivity activity;
+    private WalletApplication application;
+    private Configuration config;
+
+    private ViewAnimator viewGroup;
+    private RecyclerView recyclerView;
+    private BlockListCollapsibleAdapter adapter;
+
+    private AbstractWalletActivityViewModel walletActivityViewModel;
+    private NetworkMonitorViewModel activityViewModel;
+    private BlockListViewModel viewModel;
+
+    private static final Logger log = LoggerFactory.getLogger(BlockListFragment.class);
+
+    @Override
+    public void onAttach(final Context context) {
+        super.onAttach(context);
+        this.activity = (AbstractWalletActivity) context;
+        this.application = this.activity.getWalletApplication();
+        this.config = application.getConfiguration();
+    }
+
+    @Override
+    public void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        walletActivityViewModel = new ViewModelProvider(activity).get(AbstractWalletActivityViewModel.class);
+        walletActivityViewModel.wallet.observe(this, wallet -> maybeSubmitList());
+        activityViewModel = new ViewModelProvider(activity).get(NetworkMonitorViewModel.class);
+        // Removed block selection functionality for modern adapter
+        viewModel = new ViewModelProvider(this).get(BlockListViewModel.class);
+        viewModel.blocks.observe(this, blocks -> {
+            maybeSubmitList();
+            viewGroup.setDisplayedChild(1);
+            viewModel.getTransactions().loadTransactions();
+        });
+        viewModel.getTransactions().observe(this, transactions -> maybeSubmitList());
+        viewModel.getTime().observe(this, time -> maybeSubmitList());
+
+        adapter = new BlockListCollapsibleAdapter(activity, null, null);
+    }
+
+    @Override
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+            final Bundle savedInstanceState) {
+        final View view = inflater.inflate(R.layout.block_list_fragment, container, false);
+        viewGroup = view.findViewById(R.id.block_list_group);
+        recyclerView = view.findViewById(R.id.block_list);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new StickToTopLinearLayoutManager(activity));
+        recyclerView.setAdapter(adapter);
+        return view;
+    }
+
+    private void maybeSubmitList() {
+        final List<StoredBlock> blocks = viewModel.blocks.getValue();
+        if (blocks != null) {
+            final java.util.Set<org.bitcoinj.core.Transaction> transactions = viewModel.getTransactions().getValue();
+            final org.bitcoinj.wallet.Wallet wallet = walletActivityViewModel.wallet.getValue();
+            
+            Log.d("BlockListFragment", "Building list with " + blocks.size() + " blocks, " + 
+                  (transactions != null ? transactions.size() : 0) + " transactions, wallet: " + (wallet != null ? "present" : "null"));
+            
+            final List<BlockListCollapsibleAdapter.ListItem> listItems = 
+                BlockListCollapsibleAdapter.buildListItems(activity, blocks, 
+                    viewModel.getTime().getValue(), Constants.LOCAL_FORMAT, 
+                    transactions, wallet, null);
+            adapter.submitList(listItems);
+        }
+    }
+
+}
